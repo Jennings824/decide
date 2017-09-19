@@ -1,0 +1,5 @@
+<% @topics.each do |topic| %>
+  <h1><%= link_to topic.title, topic_path(topic) %></h1>
+  <h1><%= topic.criteria %></h1>
+  <br />
+<% end %>

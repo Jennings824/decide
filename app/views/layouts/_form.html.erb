@@ -1,0 +1,18 @@
+<div class='add-topic-form'>
+  <br />
+  <%= form_for @topic do |f| %>
+    <div class= 'required-fields'>
+      <% f.label :title %>
+      <%= f.text_field :title, placeholder: "Title" %><br />
+
+      <% f.label :criteria %>
+      <%= f.text_field :criteria, placeholder: "Add what you'd like feedback on" %><br />
+
+    </div>
+
+      <div>
+        <% f.submit %>
+        <button class="button">Add Topic</button>
+      </div>
+  <% end %>
+</div>
