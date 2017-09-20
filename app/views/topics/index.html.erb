@@ -1,5 +1,5 @@
+<h1>Topics you should join!</h1>
+
 <% @topics.each do |topic| %>
-  <h1><%= link_to topic.title, topic_path(topic) %></h1>
-  <h1><%= topic.criteria %></h1>
-  <br />
+  <h3><%= link_to topic.title, topic_path(topic) %></h3>
 <% end %>

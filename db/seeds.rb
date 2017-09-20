@@ -18,7 +18,7 @@ User.create(
 )
 
 User.create(
-  email: "AJFlattery50@gmail.com",
+  email: "AJFlattery@gmail.com",
   password: "123456",
   password_confirmation: "123456"
 )
@@ -31,12 +31,12 @@ Topic.create(
 
 Topic.create(
   title: "Interview 2",
-  criteria: "Interview with Brian"
+  criteria: "Interview with Stephanie"
 )
 
 Topic.create(
   title: "Interview 3",
-  criteria: "Interview with Tim"
+  criteria: "Interview with Chris"
 )
 
 Topic.create(
