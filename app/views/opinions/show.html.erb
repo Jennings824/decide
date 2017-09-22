@@ -1,6 +1,9 @@
 
 <h3>All feedback below:</h3>
 <% @opinions.each do |opinion| %>
-
-    <li><%= opinion.info %></li>
-<% end %>
+    <% @user_topics.each do |user_topic| %>
+      <% if user_topic.topic_id == @topic.id && user_topic.id == opinion.user_topic_id %>
+        <h3><%= opinion.info %></h3>
+    <%end%>
+  <%end%>
+<%end%>
