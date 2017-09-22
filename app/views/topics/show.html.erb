@@ -1,12 +1,21 @@
 
-  <h3><%= @topic.title %></h3>
-  <h1><%= @topic.criteria %></h1>
+<h3><%= @topic.title %></h3>
+<h1><%= @topic.criteria %></h1>
+<%= button_to "Join", topic_user_topics_url(@topic), method: :post %>
 
-  <%= button_to "Join", topic_user_topics_url(@topic), method: :post %>
-  <h3>Attendees</h3>
+<h3>Attendees</h3>
 
   <ul>
-    <% @attendees.each do |attendee| %>
-    <li><%= attendee.email %> </li>
+    <% if user_signed_in? %>
+      <% if @attendees %>
+        <% @attendees.each do |attendee| %>
+        <li><%= attendee.email %> </li>
+          <% if current_user.id == attendee.id%>
+            <%= button_to "Add your Opinion", new_topic_opinion_path(@topic), method: :get%>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </ul>
+
+<%= button_to "View All Opinions", topic_opinion_path(@topic), method: :get%>

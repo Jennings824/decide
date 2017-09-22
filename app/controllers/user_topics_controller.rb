@@ -7,15 +7,4 @@ class UserTopicsController <ApplicationController
     redirect_to @topic
   end
 
-  # def add
-  #    @user = User.find(session[:user_id])
-  #    @topic = Topic.find(params[:id])
-  #    @user.topics << @topic
-  #    binding.pry
-  #    flash[:notice] = 'Topic was saved.'
-  #  end
-
-  # def user_topic_params
-  #   params.require(:topic).permit(:user_id, :criteria)
-  # end
 end

@@ -1,0 +1,6 @@
+<%= form_for [@topic, @opinion] do |f| %>
+  <% f.label :info %>
+  <%= f.text_field :info, placeholder: "Add your opinion" %>
+    <% f.submit %>
+    <button class="button">Submit Opinion</button>
+<% end %>
