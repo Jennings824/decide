@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
 resources :topics do
   resource :user_topics
+  resources :opinions
 end
 
+resources :user_topics do
+  resources :opinions
+end
  root 'static_pages#index'
 
  devise_for :users, controllers: {

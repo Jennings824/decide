@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Decide</title>
+<!-- <link rel="shortcut icon" href="your_image_path_and_name.ico" /> -->
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -14,18 +14,22 @@
       <% if user_signed_in? %>
         <%= link_to "Home", topics_path %></div>
         Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to 'Edit profile', edit_user_registration_path %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
         <%= link_to "Add New Topic", new_topic_path %>
 
       <% else %>
         <div class=signin>
-          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Sign up", new_user_registration_path %>
           <%= link_to "Login", new_user_session_path  %>
         </div>
       <% end %>
     </nav>
-
+    <div id="container">
+      <div id="background">
+        Decide
+      </div>
+    </div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
