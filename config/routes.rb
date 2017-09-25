@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-
-resources :topics do
-  resource :user_topics
-  resources :opinions
+# Rails Routing
+resources :topics, only: [:new, :create, :index, :show] do
+  resource :user_topics, only: [:create]
+  resources :opinions, only: [:new, :create, :show]
 end
 
-resources :user_topics do
-  resources :opinions
+resources :user_topics, only: [:create] do
+  resources :opinions, only: [:new, :create, :show]
 end
- root 'static_pages#index'
+resource :home, only: [:show]
+root to: "home#show"
 
  devise_for :users, controllers: {
   sessions: 'users/sessions',
@@ -16,18 +17,22 @@ end
   registrations: 'users/registrations'
 }
 
-# match 'user_topics' => 'user_topics#create', :via => :create
 
+# React Routing
+
+# devise_for :users, controllers: {
+#  sessions: 'users/sessions',
+#  passwords: 'users/passwords',
+#  registrations: 'users/registrations'
+# }
+#
+# namespace :api do
+#   namespace :v1 do
+#     resources :topics, only: [:show]
+#   end
+# end
+#
 # root to: redirect('/topics')
-
-# React
-  # root to: redirect('/topics')
-  # resources :topics, to: 'static_pages#index'
-  #
-  # namespace :api do
-  #   namespace :v1 do
-  #     resources :topics
-  #   end
-  # end
+# resources :topics, only: [:new, :create, :index], to: 'static_pages#index'
 
 end

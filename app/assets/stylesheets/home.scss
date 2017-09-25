@@ -1,29 +1,76 @@
+// @import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One');
 @import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
 
-#container {
-   position: relative;
-}
 
-#background {
-   position: absolute;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   right: 0;
-   z-index: -1;
-  height: 500px;
-  background-color: #45E079;
-  background-size: cover;
-  color: white;
-  font-family: 'Chau Philomene One', sans-serif;
-  font-size: 100px;
+.jumbotron{
   text-align: center;
+  position: relative;
+  height: 600px;
+  font-size: 200px;
+  background-size: cover;
+  margin-bottom: 0px;
+  background-image: url("https://d193o8p26ehxdy.cloudfront.net/img-thumbs/960w/Y01VDYAX63.jpg");
+  color: white ;
+  .jumbo-header {
+    background-color: #5FB8D6;
+        opacity: 0.7;
+    // position: fixed;
+    padding: 50px;
+
+      font-family: 'Orbitron';
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
 }
 
-#logo {
-    background-size: contain;
-}
 
 body {
       font-family: 'Chau Philomene One', sans-serif;
+      background-color: lightgrey;
+}
+
+.button {
+background: #5FB8D6;
+display: inline-block;
+padding: 5px 10px 6px;
+color: white;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px #26596A;
+-webkit-box-shadow: 0 1px 3px #26596A;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
+}
+
+.button hover {
+  color: #9EF4BB;
+}
+
+.title-index:hover {
+  background-color: #FF972A;
+}
+
+.title-index {
+background: #5FB8D6 url(/images/alert-overlay.png) repeat-x;
+display: inline-block;
+padding: 5px 10px 6px;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+line-height: 1;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-box-shadow: 0 1px 3px orange;
+-webkit-box-shadow: 0 1px 3px #26596A;
+text-shadow: 0 -1px 1px #222;
+border-bottom: 1px solid #222;
+position: relative;
+cursor: pointer;
 }

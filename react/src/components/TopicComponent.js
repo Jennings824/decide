@@ -1,12 +1,18 @@
-// import React from 'react';
-//
-// const TopicComponent = (props) => {
-//   return (
-//     <div className="TopicComponent">
-//       <h3>props.title</h3>
-//       <h3>props.criteria</h3>
-//     </div>
-//   )
-// }
-//
-// export default TopicComponent;
+import React from 'react';
+
+class  extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+
+    return (
+      <div className="">
+      I am a React class!
+      </div>
+    );
+  }
+}
+
+export default ;

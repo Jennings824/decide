@@ -11,7 +11,7 @@
         <% @attendees.each do |attendee| %>
         <li><%= attendee.email %> </li>
           <% if current_user.id == attendee.id%>
-            <%= button_to "Add your Opinion", new_topic_opinion_path(@topic), method: :get%>
+            <%= button_to "Participate in the Conversation", new_topic_opinion_path(@topic), method: :get%>
           <% end %>
         <% end %>
       <% end %>

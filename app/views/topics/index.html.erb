@@ -1,5 +1,8 @@
 <h1>Topics you should join!</h1>
-
-<% @topics.each do |topic| %>
-  <h3><%= link_to topic.title, topic_path(topic) %></h3>
-<% end %>
+  <div class="row">
+    <% @topics.each do |topic| %>
+      <div class="large-8 columns title-index">
+        <h3><%= link_to topic.title, topic_path(topic) %></h3>
+      </div>
+      <% end %>
+  </div>
