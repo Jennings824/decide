@@ -1,8 +1,7 @@
-class TopicsController <ApplicationController
+class Api::V1::TopicsController < ApplicationController
 
-  def show
-  @topic = Topic.find(params[:id])
-  @attendees = @topic.users
+  def index
+    render json: Topic.all
   end
 
 end
