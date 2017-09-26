@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 # Rails Routing
-resources :topics, only: [:new, :create, :index, :show] do
+resources :topics, only: [:new, :create, :show] do
   resource :user_topics, only: [:create]
   resources :opinions, only: [:new, :create, :show]
 end
@@ -8,6 +8,7 @@ end
 resources :user_topics, only: [:create] do
   resources :opinions, only: [:new, :create, :show]
 end
+
 resource :home, only: [:show]
 root to: "home#show"
 
@@ -17,6 +18,13 @@ root to: "home#show"
   registrations: 'users/registrations'
 }
 
+resources :topics, to: 'static_pages#index'
+
+namespace :api do
+  namespace :v1 do
+    resources :topics, only: [:index]
+  end
+end
 
 # React Routing
 

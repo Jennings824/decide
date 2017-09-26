@@ -1,18 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-class  extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-
-    return (
-      <div className="">
-      I am a React class!
-      </div>
-    );
-  }
+const TopicComponent = (props) => {
+  return (
+    <div className="TopicComponent">
+      <h3>{props.title}</h3>
+    </div>
+  )
 }
 
-export default ;
+export default TopicComponent;

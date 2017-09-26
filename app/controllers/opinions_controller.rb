@@ -28,24 +28,6 @@ class OpinionsController <ApplicationController
     @topic = Topic.find(params[:topic_id])
     @user_topics = UserTopic.all
     @opinions = Opinion.all
-    # @user_topic_opinions = []
-    # @finding_topic_id = []
-    # @users = []
-    # @opinions.each do |opinion|
-      # @user_topic_opinions << opinion.user_topic_id
-    #   @user_topics.each do |user_topic|
-    #     if user_topic.topic_id == @topic.id && user_topic.id == opinion.user_topic_id
-    #     end
-    #
-    #   end
-    # end
-    # @user_topics.each do |user_topic|
-    #   if user_topic.topic_id == @topic.id && user_topic.id ==
-    #   end
-    #
-    # end
-    # binding.pry
-
   end
 
 private
