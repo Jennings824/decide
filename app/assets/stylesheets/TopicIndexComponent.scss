@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+
+.TopicIndexComponent {
+  padding: 15px;
+  font-family: 'Orbitron';
+  align-items: center;
+  border-radius: 10px;
+  border: solid 2px black;
+  color: black;
+  margin: 25px;
+  a:hover{
+    color: red;
+    text-decoration: none;
+  }
+}

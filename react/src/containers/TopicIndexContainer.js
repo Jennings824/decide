@@ -1,5 +1,5 @@
 import React from 'react';
-import TopicComponent from '../components/TopicComponent'
+import TopicIndexComponent from '../components/TopicIndexComponent'
 import { Link } from 'react-router';
 
 class TopicIndexContainer extends React.Component {
@@ -8,7 +8,7 @@ class TopicIndexContainer extends React.Component {
     this.state = {
       topics: []
     }
-    this.refreshPage = this.refreshPage.bind(this)
+
   }
 
   componentDidMount(){
@@ -29,30 +29,34 @@ class TopicIndexContainer extends React.Component {
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-  refreshPage() {
-     window.location.reload()
-   }
 
   render() {
 
     let topicComponents = this.state.topics.map((topic) => {
   return (
-      <Link to={`/topics/${topic.id}`} key={topic.id} onClick={this.refreshPage}>
-        <TopicComponent
+        <TopicIndexComponent
           key = {topic.id}
           id = {topic.id}
           title = {topic.title}
           criteria = {topic.criteria}
           />
-      </Link>
   )
 })
 
     return (
-      <div className="TopicIndexContainer">
-        <div className= "tile">
-        <h1>Topics you should Join!</h1>
+      <div className="container">
+        <div className= "row">
+          <div className="col-sm-12 text-center">
+            <h1>Topics You Should Join!</h1>
+          </div>
+        </div>
+        <div className="row">
           {topicComponents}
+        </div>
+        <div className="row">
+          <div className="col-sm-12 text-center">
+            <h5> by </h5><a className="linkedin" href="https://www.linkedin.com/in/michaeljennings824/">Michael Jennings</a>
+          </div>
         </div>
       </div>
     );
