@@ -25,21 +25,21 @@ User.create(
 
 Topic.destroy_all
 Topic.create(
-  title: "Interview",
-  criteria: "Interview with John"
+  title: "Interview with John - 9:30am",
+  criteria: "Please provide your feedback for this candidate."
 )
 
 Topic.create(
-  title: "Interview 2",
-  criteria: "Interview with Stephanie"
+  title: "Interview with Stephanie - 11:00am",
+  criteria: "Please provide your feedback for this candidate."
 )
 
 Topic.create(
-  title: "Interview 3",
-  criteria: "Interview with Chris"
+  title: "Interview with Chris - 1:30pm",
+  criteria: "Please provide your feedback for this candidate."
 )
 
 Topic.create(
-  title: "Interview 4",
-  criteria: "Interview with Andrew"
+  title: "Interview with Jessica - 4:00pm",
+  criteria: "Please provide your feedback for this candidate."
 )
