@@ -1,21 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-<h3><%= @topic.title %></h3>
-<h1><%= @topic.criteria %></h1>
-<%= button_to "Join", topic_user_topics_url(@topic), method: :post %>
+<div class='container'>
+  <h3><%= @topic.title %></h3>
+  <h1><%= @topic.criteria %></h1>
+  <%= button_to "Join", topic_user_topics_url(@topic), method: :post %>
+</div>
 
-<h3>Attendees</h3>
-
-  <ul>
-    <% if user_signed_in? %>
-      <% if @attendees %>
-        <% @attendees.each do |attendee| %>
-        <li><%= attendee.email %> </li>
-          <% if current_user.id == attendee.id%>
-            <%= button_to "Participate in the Conversation", new_topic_opinion_path(@topic), method: :get%>
+<div class='container'>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Attendees</button>
+  <div id="demo" class="collapse">
+  </br>
+      <% if user_signed_in? %>
+        <% if @attendees %>
+          <% @attendees.each do |attendee| %>
+          <%= attendee.email %> </br>
+            <% if current_user.id == attendee.id%>
+              <%= button_to "Participate in the Conversation", new_topic_opinion_path(@topic), method: :get%>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </ul>
 
-<%= button_to "View All Opinions", topic_opinion_path(@topic), method: :get%>
+  </div>
+</div>
+
+<div class='container'>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ViewAllAttendees">View All Opinions</button>
+  <div id="ViewAllAttendees" class="collapse">
+    <div class='ViewAllAttendees'>
+    <h3>All feedback below:</h3>
+    <% @opinions.each do |opinion| %>
+      <% @user_topics.each do |user_topic| %>
+        <% if user_topic.topic_id == @topic.id && user_topic.id == opinion.user_topic_id %>
+          <% @attendees.each do |attendee| %>
+            <% if user_topic.user_id == attendee.id%>
+              <h3><%= opinion.info %> ➠ <%=attendee.email%></h3>
+            <%end%>
+          <%end%>
+        <%end%>
+      <%end%>
+    <%end%>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,8 @@ class TopicsController <ApplicationController
   def show
   @topic = Topic.find(params[:id])
   @attendees = @topic.users
+  @user_topics = UserTopic.all
+  @opinions = Opinion.all
   end
 
   def new

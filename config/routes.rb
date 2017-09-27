@@ -18,29 +18,26 @@ root to: "home#show"
   registrations: 'users/registrations'
 }
 
+# React Routing
 resources :topics, to: 'static_pages#index'
+
+resource :home, only: [:show]
+root to: "home#show"
+
 
 namespace :api do
   namespace :v1 do
-    resources :topics, only: [:index]
+    resources :topics, only: [:index, :show]
   end
 end
-
-# React Routing
-
+# resources :user_topics, only: [:create] do
+#   resources :opinions, only: [:new, :create]
+# end
+#
 # devise_for :users, controllers: {
 #  sessions: 'users/sessions',
 #  passwords: 'users/passwords',
 #  registrations: 'users/registrations'
 # }
-#
-# namespace :api do
-#   namespace :v1 do
-#     resources :topics, only: [:show]
-#   end
-# end
-#
-# root to: redirect('/topics')
-# resources :topics, only: [:new, :create, :index], to: 'static_pages#index'
 
 end
