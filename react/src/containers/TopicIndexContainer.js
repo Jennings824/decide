@@ -53,11 +53,6 @@ class TopicIndexContainer extends React.Component {
         <div className="row">
           {topicComponents}
         </div>
-        <div className="row">
-          <div className="col-sm-12 text-center">
-            <h5> by </h5><a className="linkedin" href="https://www.linkedin.com/in/michaeljennings824/">Michael Jennings</a>
-          </div>
-        </div>
       </div>
     );
   }

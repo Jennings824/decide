@@ -1,6 +1,9 @@
+<div class='container'>
+  <div class="new-opinion-form">
 <%= form_for [@topic, @opinion] do |f| %>
   <% f.label :info %>
-  <%= f.text_field :info, placeholder: "Add your opinion" %>
+  <%= f.text_field :info, placeholder: "Add your Opinion" %>
     <% f.submit %>
     <button class="button">Submit Opinion</button>
 <% end %>
+</div>

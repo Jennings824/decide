@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One');
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 
 
@@ -59,10 +58,20 @@ cursor: pointer;
 }
 
 .add-topic-form {
-font-size: 30px;
+font-size: 15px;
 text-align: center;
 margin: 10px;
   input#topic_criteria {
+    width: 50%;
+    height: 300px;
+  }
+}
+
+.new-opinion-form {
+font-size: 15px;
+text-align: center;
+margin: 10px;
+  input#opinion_info {
     width: 50%;
     height: 300px;
   }
@@ -80,10 +89,13 @@ footer {
   font-size: 10px;
   text-align: center;
   font-family: 'Orbitron';
-  background-color: white;
+  background-color: transparent;
   a:hover {
-    color: red;
+    color: darkblue;
     text-decoration: none;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
   }
 }
 
@@ -95,5 +107,5 @@ footer {
 
 .ViewAllAttendees {
   font-family: 'Orbitron';
-  text-align: left;
+  text-align: center;
 }

@@ -19,7 +19,6 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'faker'
 gem 'react-rails'
-gem 'carrierwave', '~> 1.0'
 gem 'simplecov', :require => false, :group => :test
 gem 'fog'
 gem 'devise'
@@ -30,10 +29,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'launchy'
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'valid_attribute'
   gem 'shoulda-matchers', require: false
+end
+
+group :test do
+  gem 'coveralls', require: false
 end
 
 group :development do
