@@ -1,0 +1,16 @@
+.static-page {
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.static-page--missed {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.static-page--missed .container {
+  max-width: 640px;
+}

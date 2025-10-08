@@ -11,20 +11,24 @@
 
   <body>
     <nav class="topnav" id="myTopnav">
-    <div class=navigation>
-      <% if user_signed_in? %>
-        <%= link_to "Home", topics_path %></div>
-        <div class="logged-in">
-        Logged in as <strong><%= current_user.email %></strong>
+      <div class="navigation">
+        <% if user_signed_in? %>
+          <%= link_to "Home", topics_path %>
+        <% end %>
+        <%= link_to "You have been missed", missed_path %>
       </div>
+
+      <% if user_signed_in? %>
+        <div class="logged-in">
+          Logged in as <strong><%= current_user.email %></strong>
+        </div>
         <%= link_to 'Edit profile', edit_user_registration_path %>
         <%= link_to "Add New Topic", new_topic_path %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
-
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <% else %>
-        <div class=signin>
+        <div class="signin">
           <%= link_to "Sign up", new_user_registration_path %>
-          <%= link_to "Log in", new_user_session_path  %>
+          <%= link_to "Log in", new_user_session_path %>
         </div>
       <% end %>
     </nav>
